@@ -10,8 +10,8 @@ int main(){
     std::cin >> auxDll;
     std::cout << "Enter the name of the window to inject:" << std::endl;
     std::cin >> auxWin;
-    const char* dll_Name = &auxDll[0]; //Convert string to const char*
-    const char* win_Name = &auxWin[0];
+    const char* dll_Name = auxDll.c_str(); //Convert string to const char*
+    const char* win_Name = auxWin.c_str();
 
     if(!GetFullPathName(dll_Name, MAX_PATH, dll_path, nullptr)){
         injectorUtils::error_msg("Error - DLL Path","Error, dll path full name not resolved");
