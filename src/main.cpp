@@ -3,17 +3,8 @@
 int main(){
     DWORD procc_id = NULL;
     char dll_path[MAX_PATH]; // MAX_PATH const is 260
-    const char* dll_Name;
-    const char* win_Name;
-    std::string auxDll;
-    std::string auxWin;
-
-    std::cout << "Enter the name of the DLL file:" << std::endl;
-    std::cin >> auxDll;
-    std::cout << "Enter the name of the window to inject:" << std::endl;
-    std::cin >> auxWin;
-    dll_Name = auxDll.c_str(); //Convert string to const char*
-    win_Name = auxWin.c_str();
+    const char* dll_Name = "Dll1.dll";
+    const char* win_Name = "Sin título - Paint";
 
     if(!GetFullPathName(dll_Name, MAX_PATH, dll_path, nullptr)){
         injectorUtils::error_msg("Error - DLL Path","Error, dll path full name not resolved");
