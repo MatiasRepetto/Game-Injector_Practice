@@ -5,7 +5,7 @@ void injectorUtils::get_process_id(const char* windName, DWORD & proccId){
 }
 
 void injectorUtils::error_msg(const char* title, const char* body){
-    MessageBox(0, body, title,0);
+    MessageBox(NULL, body, title, NULL);
     exit(-1);
 }
 
