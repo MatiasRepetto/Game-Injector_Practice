@@ -15,7 +15,7 @@ int main(){
     dll_Name = auxDll.c_str(); //Convert string to const char*
     win_Name = auxWin.c_str();
 
-    if(!GetFullPathName((LPCWSTR)dll_Name, MAX_PATH, (LPWSTR)dll_path, nullptr)){
+    if(!GetFullPathName(dll_Name, MAX_PATH, dll_path, nullptr)){
         injectorUtils::error_msg("Error - DLL Path","Error, dll path full name not resolved");
     }
     injectorUtils::get_process_id(win_Name, procc_id);
@@ -44,6 +44,6 @@ int main(){
     }
     CloseHandle(h_process);
     VirtualFreeEx(h_process, allocate_memory, NULL, MEM_RESERVE);
-    MessageBox(NULL, (LPCWSTR)"Success !", (LPCWSTR)"Successfully injection !",NULL);
+    MessageBox(NULL, "Success !", "Successfully injection !",NULL);
     return 0;
 }

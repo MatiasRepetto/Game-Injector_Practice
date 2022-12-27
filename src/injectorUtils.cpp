@@ -1,11 +1,11 @@
 #include "../include/injectorUtils.h"
 
 void injectorUtils::get_process_id(const char* windName, DWORD & proccId){
-    GetWindowThreadProcessId(FindWindow(NULL, (LPCWSTR)windName), &proccId);
+    GetWindowThreadProcessId(FindWindow(NULL, windName), &proccId);
 }
 
 void injectorUtils::error_msg(const char* title, const char* body){
-    MessageBox(0, (LPCWSTR)body, (LPCWSTR)title,0);
+    MessageBox(0, body, title,0);
     exit(-1);
 }
 
