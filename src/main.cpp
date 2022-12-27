@@ -1,4 +1,4 @@
-#include "./include/injectorUtils.h"
+#include "../include/injectorUtils.h"
 
 int main(){
     DWORD procc_id = NULL;
