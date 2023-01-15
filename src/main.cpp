@@ -3,14 +3,11 @@
 int main(){
     DWORD procc_id = NULL;
     char dll_path[MAX_PATH]; // MAX_PATH const is 260
-    char* auxDll = new char[256];
+    char* auxDll = "dllInjectorLua.dll";
     char* auxWin = new char[256];
 
-    std::cout << "Enter the name of the DLL file:" << std::endl;
-    std::cin >> auxDll;
     std::cout << "Enter the name of the window to inject:" << std::endl;
     std::cin >> auxWin;
-    const char* dll_Name = auxDll; //Convert string to const char*
     const char* win_Name = auxWin;
 
     if(!GetFullPathName(dll_Name, MAX_PATH, dll_path, nullptr)){
